@@ -1,5 +1,7 @@
 # Onboarding
 
+Hi all! Please note that this is a new repository from last semester as we (exec) are migrating the code to a newer tech stack. For now, when you clone the repo, all you should see is a login/logout button. Do not worry! Exec will finish migrating the rest of the code by the end of this week to pull.
+
 1. Navigate to the folder where you want to download the code in your IDE.
 2. Clone the Github Repository with git clone <this repository's url>.
 3. In the terminal (root directory), run 'npm install'.
