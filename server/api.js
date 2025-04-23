@@ -15,6 +15,9 @@ const User = require("./models/user");
 // import authentication library
 const auth = require("./auth");
 
+// import project routes
+const projectRoutes = require("./api/projects");
+
 // api endpoints: all these paths will be prefixed with "/api/"
 const router = express.Router();
 
@@ -42,6 +45,9 @@ router.post("/initsocket", (req, res) => {
 // |------------------------------|
 // | write your API methods below!|
 // |------------------------------|
+
+// mount project routes
+router.use("/projects", projectRoutes);
 
 // anything else falls to this "not found" case
 router.all("*", (req, res) => {
