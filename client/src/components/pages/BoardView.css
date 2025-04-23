@@ -1,0 +1,31 @@
+.board-view {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  padding: 16px;
+  background-color: #f3f4f6;
+  min-height: 100vh;
+}
+
+.board-column {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 16rem;
+}
+
+.create-button {
+  padding: 8px;
+  margin-top: 8px;
+  border: none;
+  border-radius: 6px;
+  background-color: #3b82f6;
+  color: white;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.create-button:hover {
+  background-color: #2563eb;
+}

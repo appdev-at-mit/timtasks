@@ -8,8 +8,26 @@ import "../utilities.css";
 import { socket } from "../client-socket";
 
 import { get, post } from "../utilities";
+import BoardView from "./pages/BoardView";
 
 export const UserContext = createContext(null);
+
+const testColumns = [
+  {
+    title: "To Do",
+    cards: [
+      { title: "Finish frontend", tags: ["urgent"], assignee: "You", color: "border-red-500" },
+      { title: "Fix bugs", tags: ["dev"], assignee: "Alex", color: "border-blue-500" },
+    ],
+  },
+  {
+    title: "In Progress",
+    cards: [
+      { title: "Set up socket.io", tags: ["backend"], assignee: "Jane", color: "border-green-500" },
+    ],
+  },
+];
+
 
 /**
  * Define the "App" component
@@ -49,6 +67,7 @@ const App = () => {
 
   return (
     <UserContext.Provider value={authContextValue}>
+         <BoardView columns={testColumns} />
       <Outlet />
     </UserContext.Provider>
   );

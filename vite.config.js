@@ -5,6 +5,9 @@ import path from 'path';
 
 export default defineConfig({
   plugins: [react(), svgr()],
+  css: {
+    postcss: './postcss.config.js',
+  },
   root: path.resolve(__dirname, 'client'), // Set the root directory for Vite
   build: {
     outDir: path.resolve(__dirname, 'client/dist'), // Output directory for production build

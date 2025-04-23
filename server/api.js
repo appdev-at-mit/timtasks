@@ -43,6 +43,12 @@ router.post("/initsocket", (req, res) => {
 // | write your API methods below!|
 // |------------------------------|
 
+//POST REQUESTS
+router.post("/tasks", (req, res) => {
+  console.log("Test API endpoint called");
+  res.send({ msg: "Test API endpoint" });
+});
+
 // anything else falls to this "not found" case
 router.all("*", (req, res) => {
   console.log(`API route not found: ${req.method} ${req.url}`);
