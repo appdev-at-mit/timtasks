@@ -45,7 +45,7 @@ const NavBar = () => {
   }, [spacesDropdownRef]);
 
   const handleProjectSelect = (projectSlug) => {
-    navigate(`/projects/${projectSlug}`);
+    navigate(`/${projectSlug}`);
     setShowSpacesDropdown(false);
   };
 
@@ -58,7 +58,7 @@ const NavBar = () => {
   const handleProjectCreated = (newProject) => {
     setProjects(prevProjects => [newProject, ...prevProjects]);
     setShowCreateProjectModal(false);
-    navigate(`/projects/${newProject.slug}`);
+    navigate(`/${newProject.slug}`);
   }
 
   // callback for project form cancel
@@ -89,12 +89,12 @@ const NavBar = () => {
                       projects.map(p => (
                         <a 
                           key={p._id} 
-                          href={`/projects/${p.slug}`} 
+                          href={`/${p.slug}`} 
                           onClick={(e) => {e.preventDefault(); handleProjectSelect(p.slug);}}
                           className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 truncate"
                           title={p.name}
                         >
-                          {p.name} <span className="text-gray-500">({p.key})</span>
+                          {p.name}
                         </a>
                       ))
                    ) : (
@@ -125,7 +125,7 @@ const NavBar = () => {
                onClick={handleCreateClick}
                className="flex items-center px-3 py-1.5 bg-red-600 text-white rounded hover:bg-red-700 text-sm font-medium mr-4"
              >
-               <PlusIcon className="w-4 h-4 mr-1" /> Create
+               <PlusIcon className="w-4 h-4 mr-1" /> Create Space
              </button>
           )}
 
