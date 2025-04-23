@@ -60,7 +60,7 @@ const ListView = () => {
   return (
     <div
       style={{
-        backgroundColor: "blue",
+        backgroundColor: "white",
         width: "100%",
         height: "100vh",
         padding: "5px",

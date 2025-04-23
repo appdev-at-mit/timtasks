@@ -49,6 +49,11 @@ export default function ListItem(props) {
     console.log("editing", isEditing);
   }, [isEditing]);
 
+  // update entry in db
+  useEffect(() => {
+    console.log("update db");
+  }, [summary, status, assignee, priority, dueDate]);
+
   return (
     <>
       <div
@@ -88,7 +93,7 @@ export default function ListItem(props) {
               justifyContent: "center",
               alignItems: "center",
               height: "100%",
-              border: "2px solid black",
+              border: "2px solid blue",
               zIndex: 3,
             }}
           />
