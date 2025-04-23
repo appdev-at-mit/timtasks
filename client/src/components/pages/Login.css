@@ -1,0 +1,84 @@
+.login-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #f5f7fa;
+  }
+  
+  .login-card {
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .login-card header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .login-card__title {
+    margin-bottom: 1.5rem;
+    font-size: 1.25rem;
+    color: #333;
+  }
+  
+  .login-card__form > * + * {
+    margin-top: 1rem;
+  }
+  
+  .login-card__divider {
+    margin: 1.5rem 0;
+    position: relative;
+  }
+  .login-card__divider span {
+    background: #fff;
+    padding: 0 0.5rem;
+    color: #666;
+    font-size: 0.875rem;
+  }
+  .login-card__divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #ddd;
+    transform: translateY(-50%);
+  }
+
+  .login-card_skeleton{
+    display: flex;
+    justify-content: center;
+    width: 100%;      /* span full card width */
+    margin-top: 1rem;
+  }
+  
+  .logo {
+    display: block;           /* treat like a block so margin auto works */
+    width: 100%;              /* fill up to its container */
+    max-width: 200px;         /* never grow wider than this */
+    height: auto;             /* maintain original aspect ratio */
+    margin: 0  auto 1.5rem;   /* center horizontally, add bottom spacing */
+  }
+  /* .sr-only for screen-reader-only labels */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+
+  

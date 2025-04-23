@@ -1,0 +1,33 @@
+/* src/components/Sidebar.css */
+.sidebar {
+    position: fixed;
+    top: 60px;    /* below the navbar */
+    left: 0;
+    bottom: 0;
+    width: 240px;
+    background: #f7f7f7;
+    border-right: 1px solid #ddd;
+    padding: 1rem;
+    overflow-y: auto;
+  }
+  
+  .sidebar__section + .sidebar__section {
+    margin-top: 2rem;
+  }
+  
+  .sidebar__section h2 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  
+  .sidebar__section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar__section li {
+    padding: 0.4rem 0;
+    cursor: pointer;
+  }
+  

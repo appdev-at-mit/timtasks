@@ -1,0 +1,47 @@
+/* src/components/Navbar.css */
+.navbar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 60px;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    z-index: 10;
+  }
+  
+  .navbar__logo {
+    display: flex;
+    align-items: center;       /* vertical-center the img + text */
+    gap: 0.5rem;  
+  }
+  
+  .navbar__actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .navbar__search {
+    padding: 0.4rem 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .btn--create {
+    background: #c0392b;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .logo {
+    max-height: 40px;   /* or whatever fits your navbar height */
+    width: auto;
+    margin-right: 0.5rem; /* space between icon and text */
+  }
+  
