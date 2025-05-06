@@ -11,11 +11,14 @@ import { get, post } from "../utilities";
 
 export const UserContext = createContext(null);
 
+
+
 /**
  * Define the "App" component
  */
 const App = () => {
   const [userId, setUserId] = useState(undefined);
+  const [userProfile, setUserProfile] = useState(null);
 
   useEffect(() => {
     get("/api/whoami").then((user) => {
@@ -30,6 +33,7 @@ const App = () => {
     const userToken = credentialResponse.credential;
     const decodedCredential = jwt_decode(userToken);
     console.log(`Logged in as ${decodedCredential.name}`);
+    setUserProfile(decodedCredential);
     post("/api/login", { token: userToken }).then((user) => {
       setUserId(user._id);
       post("/api/initsocket", { socketid: socket.id });
@@ -38,11 +42,13 @@ const App = () => {
 
   const handleLogout = () => {
     setUserId(undefined);
+    setUserProfile(null);
     post("/api/logout");
   };
 
   const authContextValue = {
     userId,
+    userProfile,
     handleLogin,
     handleLogout,
   };
