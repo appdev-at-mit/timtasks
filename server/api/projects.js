@@ -47,7 +47,7 @@ router.post("/", ensureLoggedIn, async (req, res) => {
     return res.status(400).send({ message: "project name and key are required" });
   }
 
-  // --- name and slug handling --- 
+  // --- name and slug handling ---
   const nameLower = name.trim().toLowerCase();
   const generatedSlug = slugify(name);
 
@@ -150,4 +150,29 @@ router.get("/:identifier", ensureLoggedIn, async (req, res) => {
 
 // todo: add routes for managing members (post /:projectid/members, delete /:projectid/members/:userid)
 
-module.exports = router; 
+
+const Task = require("../models/Task");
+
+
+// existing project routes here...
+
+// For /api/projects/:slug/tasks
+router.get("/:slug/tasks", ensureLoggedIn, async (req, res) => {
+  try {
+    const project = await Project.findOne({ slug: req.params.slug });
+    if (!project) {
+      return res.status(404).json({ msg: "Project not found" });
+    }
+
+    const tasks = await Task.find({ project: project._id })
+      .populate("creator", "name")
+      .populate("assignedTo", "name");
+
+    res.json(tasks);
+  } catch (err) {
+    console.error("Error fetching tasks:", err);
+    res.status(500).json({ msg: "Server error" });
+  }
+});
+
+module.exports = router;

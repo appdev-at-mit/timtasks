@@ -46,4 +46,4 @@ const ProjectSchema = new Schema({
 });
 
 // compile model from schema
-module.exports = mongoose.model("project", ProjectSchema); 
+module.exports = mongoose.model("Project", ProjectSchema);

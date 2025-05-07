@@ -10,6 +10,7 @@
 const express = require("express");
 
 // import models so we can interact with the database
+
 const User = require("./models/user");
 
 // import authentication library
@@ -17,6 +18,7 @@ const auth = require("./auth");
 
 // import project routes
 const projectRoutes = require("./api/projects");
+const taskRoutes = require("./api/tasks");
 
 // api endpoints: all these paths will be prefixed with "/api/"
 const router = express.Router();
@@ -48,6 +50,9 @@ router.post("/initsocket", (req, res) => {
 
 // mount project routes
 router.use("/projects", projectRoutes);
+
+// mount task routes 👇
+router.use("/tasks", taskRoutes);
 
 // anything else falls to this "not found" case
 router.all("*", (req, res) => {

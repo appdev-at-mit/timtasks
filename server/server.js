@@ -15,11 +15,18 @@
 
 // validator runs some basic checks to make sure you've set everything up correctly
 // this is a tool provided by staff, so you don't need to worry about it
+
+// Load Mongoose models so they're registered before routes use them
+
 const validator = require("./validator");
 validator.checkSetup();
 
 //allow us to use process.ENV
 require("dotenv").config();
+
+require("./models/Project");
+require("./models/Task");
+require("./models/user");
 
 //import libraries needed for the webserver to work!
 const http = require("http");
@@ -83,7 +90,9 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(reactPath, "index.html"), (err) => {
     if (err) {
       console.log("Error sending client/dist/index.html:", err.status || 500);
-      res.status(err.status || 500).send("Error sending client/dist/index.html - have you run `npm run build`?");
+      res
+        .status(err.status || 500)
+        .send("Error sending client/dist/index.html - have you run `npm run build`?");
     }
   });
 });
