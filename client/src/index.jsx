@@ -5,7 +5,7 @@ import Skeleton from "./components/pages/Skeleton";
 import NotFound from "./components/pages/NotFound";
 import MainLayout from "./components/layout/MainLayout";
 import ProjectHome from "./components/pages/ProjectHome";
-
+import ProjectSettings from "./components/pages/ProjectSettings"
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -20,7 +20,7 @@ const GOOGLE_CLIENT_ID = "732812942422-vqqc3otkhjg3r0nli64v074dh5du6btv.apps.goo
 // placeholder components for nested routes
 const TaskBoard = () => <div className="p-4">task board component placeholder</div>;
 const Documentation = () => <div className="p-4">documentation component placeholder</div>;
-const ProjectSettings = () => <div className="p-4">project settings component placeholder</div>;
+// const ProjectSettings = () => <div className="p-4">project settings component placeholder</div>;
 const MyUpdates = () => <div className="p-4">my updates component placeholder</div>;
 const MyTasks = () => <div className="p-4">my tasks component placeholder</div>;
 
